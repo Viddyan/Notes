@@ -1,0 +1,242 @@
+### Bitwise Operators:
+
+#### 1. **Introduction (What, Why, How)**
+
+- **What**:  
+  Bitwise operators perform operations directly on binary representations of integers. Instead of manipulating the entire number as a whole, bitwise operators manipulate individual bits (0s and 1s) of an integer.
+
+- **Why**:  
+  Bitwise operators are important in low-level programming, optimizing performance, and working with hardware-level operations. They allow efficient operations, particularly when working with flags, permissions, encryption, data compression, and bit manipulation.
+
+- **How**:  
+  These operators work by applying binary operations (AND, OR, XOR, NOT, etc.) on corresponding bits of two numbers, or by shifting bits left or right. Common bitwise operators include AND (`&`), OR (`|`), XOR (`^`), NOT (`~`), left shift (`<<`), and right shift (`>>`).
+
+#### 2. **Learning Objectives**
+
+By the end of this topic, you should be able to:
+- Understand what bitwise operators are and their role in programming.
+- Perform bitwise operations like AND, OR, XOR, and NOT.
+- Use bit shifting to manipulate binary data.
+- Apply bitwise operators to solve real-world problems like setting flags or toggling bits.
+
+#### 3. **Essential Concepts (Building Blocks)**
+
+1. **Binary Representation**
+   - Computers store data in binary (base 2) format, using 0s and 1s to represent numbers.
+   - For example, the number `5` in binary is represented as `0101`.
+
+2. **Common Bitwise Operators**
+
+   | Operator | Symbol | Description                                                 | Example                          |
+   |----------|--------|-------------------------------------------------------------|----------------------------------|
+   | AND      | `&`    | Performs a bitwise AND operation. Only sets a bit to `1` if both corresponding bits are `1`. | `0101 & 0011 = 0001`             |
+   | OR       | `|`    | Performs a bitwise OR operation. Sets a bit to `1` if either corresponding bit is `1`. | `0101 | 0011 = 0111`             |
+   | XOR      | `^`    | Performs a bitwise XOR (exclusive OR). Sets a bit to `1` if exactly one corresponding bit is `1`. | `0101 ^ 0011 = 0110`             |
+   | NOT      | `~`    | Inverts all the bits (1 becomes 0, 0 becomes 1).            | `~0101 = 1010` (for 4-bit value) |
+   | Left Shift | `<<` | Shifts all bits to the left by a specified number of positions. | `0101 << 1 = 1010`               |
+   | Right Shift | `>>` | Shifts all bits to the right by a specified number of positions. | `0101 >> 1 = 0010`               |
+
+3. **AND (`&`) Operation**
+   - The AND operator compares each bit of two numbers and sets the result bit to `1` only if both bits are `1`. Otherwise, it sets the result bit to `0`.
+
+   **Example**:  
+   ```pseudocode
+   5 & 3:
+   5 -> 0101
+   3 -> 0011
+   -----------
+   Result -> 0001 (which is 1 in decimal)
+   ```
+
+4. **OR (`|`) Operation**
+   - The OR operator compares each bit of two numbers and sets the result bit to `1` if at least one of the bits is `1`.
+
+   **Example**:  
+   ```pseudocode
+   5 | 3:
+   5 -> 0101
+   3 -> 0011
+   -----------
+   Result -> 0111 (which is 7 in decimal)
+   ```
+
+5. **XOR (`^`) Operation**
+   - The XOR operator compares each bit of two numbers and sets the result bit to `1` only if the corresponding bits are different.
+
+   **Example**:  
+   ```pseudocode
+   5 ^ 3:
+   5 -> 0101
+   3 -> 0011
+   -----------
+   Result -> 0110 (which is 6 in decimal)
+   ```
+
+6. **NOT (`~`) Operation**
+   - The NOT operator inverts all the bits of the number (1 becomes 0, and 0 becomes 1). However, it's important to note that NOT operation on signed integers will invert not only the bits but also affect the sign bit.
+
+   **Example**:  
+   ```pseudocode
+   ~5:
+   5 -> 0101 (for a 4-bit number)
+   -----------
+   Result -> 1010 (which is -6 in two's complement representation)
+   ```
+
+7. **Left Shift (`<<`)**
+   - The left shift operator shifts the bits of a number to the left by a specified number of positions, effectively multiplying the number by `2` for each shift.
+
+   **Example**:  
+   ```pseudocode
+   5 << 1:
+   5 -> 0101
+   -----------
+   Result -> 1010 (which is 10 in decimal)
+   ```
+
+8. **Right Shift (`>>`)**
+   - The right shift operator shifts the bits of a number to the right by a specified number of positions, effectively dividing the number by `2` for each shift.
+
+   **Example**:  
+   ```pseudocode
+   5 >> 1:
+   5 -> 0101
+   -----------
+   Result -> 0010 (which is 2 in decimal)
+   ```
+
+#### 4. **Hands-On Coding (Real-World Implementations)**
+
+1. **Bitwise AND Example**  
+   Find whether a number is even or odd using the AND operator.
+   ```pseudocode
+   function isEven(n):
+       return (n & 1) == 0
+   ```
+
+2. **Bitwise OR Example**  
+   Setting a particular bit in a number.
+   ```pseudocode
+   function setBit(num, position):
+       return num | (1 << position)
+   ```
+
+3. **Bitwise XOR Example**  
+   Swap two numbers using XOR without a temporary variable.
+   ```pseudocode
+   function swap(a, b):
+       a = a ^ b
+       b = a ^ b
+       a = a ^ b
+   ```
+
+4. **Left Shift Example**  
+   Multiply a number by `2` using the left shift operator.
+   ```pseudocode
+   function multiplyByTwo(n):
+       return n << 1
+   ```
+
+5. **Right Shift Example**  
+   Divide a number by `2` using the right shift operator.
+   ```pseudocode
+   function divideByTwo(n):
+       return n >> 1
+   ```
+
+#### 5. **Guided Exercises (Practice Tasks)**
+
+1. **Write a function to toggle the `n`-th bit of a given number using XOR.**
+   ```pseudocode
+   function toggleBit(num, position):
+       return num ^ (1 << position)
+   ```
+
+2. **Write a function that checks if the `n`-th bit of a number is set (1) or not.**
+   ```pseudocode
+   function isBitSet(num, position):
+       return (num & (1 << position)) != 0
+   ```
+
+3. **Use bitwise operations to find the number of 1s (set bits) in the binary representation of a given number.**
+   ```pseudocode
+   function countSetBits(num):
+       count = 0
+       while num > 0:
+           count = count + (num & 1)
+           num = num >> 1
+       return count
+   ```
+
+4. **Write a function to clear the `n`-th bit of a number using AND and NOT.**
+   ```pseudocode
+   function clearBit(num, position):
+       return num & ~(1 << position)
+   ```
+
+#### 6. **Interview Preparation**
+
+1. **What is the difference between bitwise AND and logical AND?**
+2. **How can you check if a number is a power of 2 using a bitwise operator?**
+3. **Explain the XOR trick for swapping two variables without using a temporary variable.**
+4. **Write code to find the only number that appears an odd number of times in an array using XOR.**
+5. **What is a use case for the bitwise NOT operator?**
+
+#### 7. **Wrap-Up**
+
+Bitwise operators allow you to perform operations directly on binary representations of numbers. They are faster and more memory-efficient than equivalent arithmetic operations and are widely used in low-level programming, system design, cryptography, and optimization tasks. Understanding and applying bitwise operators are essential for solving problems that involve binary data or hardware-level manipulations.
+
+#### 8. **Post-Session Resources**
+
+- **Books**:  
+  "The Art of Computer Programming" by Donald Knuth (Chapter on Bitwise Operations).
+  
+- **Online Resources**:  
+  - GeeksforGeeks: Bitwise operators and their applications.
+  - Bitwise Operation Cheatsheet from HackerRank.
+  - LeetCode: Problems tagged with "Bitwise Operations".
+
+#### 9. **Assessment (Output-Based Questions)**
+
+1. **Consider the following pseudocode:**
+   ```pseudocode
+   x = 12  // Binary: 1100
+   y = 10  // Binary: 1010
+   result = x
+
+ & y
+   ```
+   **What will be the value of `result`?**
+   - a) `8`
+   - b) `10`
+   - c) `12`
+   - d) `14`
+
+   **Answer:** `a) 8`
+
+2. **Consider the following pseudocode:**
+   ```pseudocode
+   x = 5   // Binary: 0101
+   result = ~x
+   ```
+   **What will be the value of `result` assuming a 4-bit signed integer?**
+   - a) `-6`
+   - b) `6`
+   - c) `-5`
+   - d) `5`
+
+   **Answer:** `a) -6`
+
+3. **What will be the output of the following operation?**
+   ```pseudocode
+   x = 7   // Binary: 0111
+   result = x << 2
+   ```
+   - a) `28`
+   - b) `7`
+   - c) `14`
+   - d) `32`
+
+   **Answer:** `a) 28`
+
+---
