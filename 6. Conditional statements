@@ -1,0 +1,295 @@
+### Conditional Statements:
+
+#### 1. **Introduction (What, Why, How)**
+
+- **What**:  
+  Conditional statements are control flow structures that allow a program to make decisions and execute different code paths based on conditions (expressions that evaluate to true or false). They are fundamental to decision-making in programming.
+
+- **Why**:  
+  Conditional statements are essential for creating dynamic, flexible programs that can handle various scenarios and inputs. Without them, programs would follow a linear path without the ability to respond to different situations.
+
+- **How**:  
+  By using conditional statements like `if`, `else if`, `else`, `switch`, and ternary operators, programs can evaluate conditions and execute specific code blocks based on the result of those evaluations.
+
+#### 2. **Learning Objectives**
+
+By the end of this topic, you should be able to:
+- Understand the purpose of conditional statements in programming.
+- Use `if`, `else if`, and `else` statements to control the flow of a program.
+- Utilize the `switch` statement for multi-condition scenarios.
+- Implement ternary operators for concise conditional expressions.
+- Recognize the importance of proper condition syntax in decision-making.
+
+#### 3. **Essential Concepts (Building Blocks)**
+
+1. **`if` Statement**
+
+   The `if` statement is the simplest form of a conditional. It executes a block of code only if a specified condition evaluates to true.
+
+   **Syntax**:
+   ```pseudocode
+   if (condition):
+       // Block of code to be executed if the condition is true
+   ```
+
+   **Example**:
+   ```pseudocode
+   if (x > 0):
+       Print("x is positive")
+   ```
+
+   - The condition inside the parentheses is evaluated.
+   - If the condition is true, the block of code inside the `if` is executed.
+   - If the condition is false, the block is skipped.
+
+2. **`else if` Statement**
+
+   The `else if` statement allows for multiple conditions to be checked after the initial `if` statement. It provides additional decision-making capabilities.
+
+   **Syntax**:
+   ```pseudocode
+   if (condition1):
+       // Block of code if condition1 is true
+   else if (condition2):
+       // Block of code if condition2 is true
+   ```
+
+   **Example**:
+   ```pseudocode
+   if (x > 0):
+       Print("x is positive")
+   else if (x == 0):
+       Print("x is zero")
+   ```
+
+   - The first `if` is evaluated. If it's false, the program checks the `else if` condition.
+   - This pattern continues with more `else if` blocks if necessary.
+
+3. **`else` Statement**
+
+   The `else` statement provides a fallback block of code that is executed if none of the preceding conditions are true.
+
+   **Syntax**:
+   ```pseudocode
+   if (condition):
+       // Block of code if the condition is true
+   else:
+       // Block of code if the condition is false
+   ```
+
+   **Example**:
+   ```pseudocode
+   if (x > 0):
+       Print("x is positive")
+   else:
+       Print("x is negative")
+   ```
+
+   - If all `if` and `else if` conditions are false, the `else` block will execute.
+
+4. **Nested Conditional Statements**
+
+   Conditional statements can be nested inside one another to handle more complex logic.
+
+   **Syntax**:
+   ```pseudocode
+   if (condition1):
+       if (condition2):
+           // Block of code if both condition1 and condition2 are true
+   ```
+
+   **Example**:
+   ```pseudocode
+   if (x > 0):
+       if (x < 10):
+           Print("x is positive and less than 10")
+   ```
+
+   - In this case, the inner `if` statement is only evaluated if the outer `if` is true.
+
+5. **`switch` Statement**
+
+   The `switch` statement is an alternative to using multiple `else if` blocks. It is used when there are several possible values for a single expression, each of which leads to a different code block.
+
+   **Syntax**:
+   ```pseudocode
+   switch (expression):
+       case value1:
+           // Block of code for value1
+           break
+       case value2:
+           // Block of code for value2
+           break
+       default:
+           // Block of code if no case matches
+   ```
+
+   **Example**:
+   ```pseudocode
+   switch (day):
+       case 1:
+           Print("Monday")
+           break
+       case 2:
+           Print("Tuesday")
+           break
+       default:
+           Print("Invalid day")
+   ```
+
+   - The `switch` expression is evaluated, and the program jumps to the matching case. If no case matches, the `default` block is executed.
+   - The `break` statement prevents the program from executing the next case, ensuring only one block is executed.
+
+6. **Ternary Operator**
+
+   The ternary operator is a concise way to write simple `if-else` conditions.
+
+   **Syntax**:
+   ```pseudocode
+   result = (condition) ? valueIfTrue : valueIfFalse
+   ```
+
+   **Example**:
+   ```pseudocode
+   message = (x > 0) ? "Positive" : "Not positive"
+   ```
+
+   - The condition is evaluated. If true, `valueIfTrue` is returned; otherwise, `valueIfFalse` is returned.
+
+#### 4. **Hands-On Coding (Real-World Implementations)**
+
+1. **Using an `if-else` statement to check a number’s positivity**:
+   ```pseudocode
+   x = -5
+   if (x > 0):
+       Print("Positive")
+   else:
+       Print("Negative or Zero")
+   ```
+
+2. **Using a `switch` statement to determine the day of the week**:
+   ```pseudocode
+   day = 2
+   switch (day):
+       case 1:
+           Print("Monday")
+           break
+       case 2:
+           Print("Tuesday")
+           break
+       default:
+           Print("Invalid day")
+   ```
+
+3. **Using nested `if` statements for grading**:
+   ```pseudocode
+   score = 85
+   if (score >= 90):
+       Print("A grade")
+   else if (score >= 80):
+       if (score < 85):
+           Print("B grade")
+       else:
+           Print("B+ grade")
+   else:
+       Print("C grade or lower")
+   ```
+
+4. **Using the ternary operator for simple condition evaluation**:
+   ```pseudocode
+   age = 20
+   canVote = (age >= 18) ? "Eligible to vote" : "Not eligible to vote"
+   Print(canVote)
+   ```
+
+#### 5. **Guided Exercises (Practice Tasks)**
+
+1. **Check if a number is even or odd using an `if-else` statement**:
+   ```pseudocode
+   if (x % 2 == 0):
+       Print("Even")
+   else:
+       Print("Odd")
+   ```
+
+2. **Using a `switch` statement to categorize a grade**:
+   ```pseudocode
+   grade = 'B'
+   switch (grade):
+       case 'A':
+           Print("Excellent")
+           break
+       case 'B':
+           Print("Good")
+           break
+       default:
+           Print("Needs Improvement")
+   ```
+
+3. **Using the ternary operator to check if a person can drive**:
+   ```pseudocode
+   age = 16
+   canDrive = (age >= 18) ? "Can Drive" : "Cannot Drive"
+   Print(canDrive)
+   ```
+
+#### 6. **Interview Preparation**
+
+1. **What is the difference between an `if` statement and a `switch` statement?**
+2. **Explain the concept of nesting `if` statements with an example.**
+3. **When should you use a ternary operator over a traditional `if-else` statement?**
+4. **How does the `switch` statement work, and why do we use `break` in a `switch` case?**
+5. **What will be the output of the following code?**
+   ```pseudocode
+   x = 10
+   if (x > 5):
+       if (x < 15):
+           Print("x is between 5 and 15")
+       else:
+           Print("x is 15 or greater")
+   ```
+
+#### 7. **Wrap-Up**
+
+Conditional statements are a core concept in programming that enable decision-making and flow control. They allow a program to take different actions based on specific conditions. Whether it's through `if-else` constructs, `switch` statements, or ternary operators, understanding conditional logic is fundamental to writing efficient, dynamic code.
+
+#### 8. **Post-Session Resources**
+
+- **Books**:  
+  "Clean Code: A Handbook of Agile Software Craftsmanship" by Robert C. Martin.
+  
+- **Online Resources**:  
+  - GeeksforGeeks: Conditional Statements.
+  - W3Schools: JavaScript Conditionals.
+
+#### 9. **Assessment (Output-Based Questions)**
+
+1. **Consider the following pseudocode:**
+   ```pseudocode
+   x = 5
+   if (x > 3):
+       Print("x is greater than 3")
+   else:
+       Print("x is not greater than 3")
+   ```
+   **What will be the output?**
+   - a) `x is
+
+ greater than 3`
+   - b) `x is not greater than 3`
+   **Answer**: a
+
+2. **What will be printed by the following code?**
+   ```pseudocode
+   y = 2
+   switch (y):
+       case 1:
+           Print("One")
+           break
+       case 2:
+           Print("Two")
+           break
+       default:
+           Print("Default")
+   ```
+   **Answer**: `Two`.
