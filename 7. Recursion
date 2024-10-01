@@ -1,0 +1,249 @@
+### Recursion:
+
+#### 1. **Introduction (What, Why, How)**
+
+- **What**:  
+  Recursion is a programming technique where a function calls itself in order to solve smaller instances of the same problem. Each recursive call reduces the problem size until a base case is reached, which terminates the recursion.
+
+- **Why**:  
+  Recursion is an essential tool for solving problems that can be broken down into similar subproblems, such as searching algorithms, sorting algorithms, and working with data structures like trees. It simplifies code for tasks that have inherent hierarchical or repetitive structures.
+
+- **How**:  
+  A recursive function has two main parts:
+  1. **Base Case**: The condition that stops the recursion and prevents an infinite loop.
+  2. **Recursive Case**: The part where the function calls itself with a smaller problem size.
+
+#### 2. **Learning Objectives**
+
+By the end of this topic, you should be able to:
+- Understand the concept of recursion and how it works.
+- Identify the base case and recursive case in a recursive function.
+- Write simple recursive functions to solve problems.
+- Analyze the pros and cons of recursion versus iteration.
+- Implement recursion to solve real-world problems like factorial, Fibonacci, and more.
+
+#### 3. **Essential Concepts (Building Blocks)**
+
+1. **Base Case and Recursive Case**
+
+   - **Base Case**: This is the terminating condition of the recursion. If no base case is provided, the function will keep calling itself indefinitely, leading to a stack overflow error.
+   - **Recursive Case**: This is the part of the function that reduces the complexity of the problem and moves it towards the base case.
+
+   **Example: Factorial Function**
+
+   The factorial of a number is the product of all positive integers less than or equal to that number. For example, 5! (5 factorial) is 5 × 4 × 3 × 2 × 1 = 120.
+
+   **Pseudocode**:
+   ```pseudocode
+   function factorial(n):
+       if n == 0:    // Base Case
+           return 1
+       else:         // Recursive Case
+           return n * factorial(n - 1)
+   ```
+
+   Here, the base case is `n == 0` (which returns 1), and the recursive case reduces the problem by calculating `n * factorial(n - 1)`.
+
+2. **How Recursion Works**
+
+   Recursion works by calling the same function repeatedly but with a smaller input, leading to multiple calls on the call stack. Each recursive call is pushed onto the stack until the base case is reached, at which point the calls are resolved in reverse order (stack unwinding).
+
+   **Example: Fibonacci Sequence**
+
+   The Fibonacci sequence is defined as:
+   - F(0) = 0
+   - F(1) = 1
+   - F(n) = F(n-1) + F(n-2) for n > 1
+
+   **Pseudocode**:
+   ```pseudocode
+   function fibonacci(n):
+       if n == 0:      // Base Case
+           return 0
+       if n == 1:      // Base Case
+           return 1
+       else:           // Recursive Case
+           return fibonacci(n - 1) + fibonacci(n - 2)
+   ```
+
+3. **Direct vs. Indirect Recursion**
+
+   - **Direct Recursion**: A function calls itself directly.
+   - **Indirect Recursion**: A function calls another function, which in turn calls the original function.
+
+   **Example of Direct Recursion**:
+   ```pseudocode
+   function A():
+       // Some code
+       A()
+   ```
+
+   **Example of Indirect Recursion**:
+   ```pseudocode
+   function A():
+       B()
+
+   function B():
+       A()
+   ```
+
+4. **Recursion vs. Iteration**
+
+   - **Recursion**: Solves problems by repeatedly breaking them down into smaller subproblems. Each function call adds a new frame to the call stack.
+   - **Iteration**: Uses loops (`for`, `while`) to repeat an action until a condition is met. It typically consumes less memory as there are no additional function calls.
+   
+   **Recursion Example (Factorial)**:
+   ```pseudocode
+   function factorial(n):
+       if n == 0:
+           return 1
+       else:
+           return n * factorial(n - 1)
+   ```
+
+   **Iteration Example (Factorial)**:
+   ```pseudocode
+   function factorial(n):
+       result = 1
+       for i = 1 to n:
+           result = result * i
+       return result
+   ```
+
+#### 4. **Hands-On Coding (Real-World Implementations)**
+
+1. **Factorial Using Recursion**
+   ```pseudocode
+   function factorial(n):
+       if n == 0:
+           return 1
+       else:
+           return n * factorial(n - 1)
+   ```
+
+2. **Fibonacci Using Recursion**
+   ```pseudocode
+   function fibonacci(n):
+       if n == 0:
+           return 0
+       if n == 1:
+           return 1
+       else:
+           return fibonacci(n - 1) + fibonacci(n - 2)
+   ```
+
+3. **Sum of Array Using Recursion**
+   ```pseudocode
+   function sumArray(arr, n):
+       if n == 0:
+           return 0
+       else:
+           return arr[n - 1] + sumArray(arr, n - 1)
+   ```
+
+4. **Power Calculation Using Recursion**  
+   This calculates the result of `a` raised to the power `b`.
+   ```pseudocode
+   function power(a, b):
+       if b == 0:
+           return 1
+       else:
+           return a * power(a, b - 1)
+   ```
+
+#### 5. **Guided Exercises (Practice Tasks)**
+
+1. **Write a recursive function to find the sum of digits of a number**.
+   ```pseudocode
+   function sumOfDigits(n):
+       if n == 0:
+           return 0
+       else:
+           return n % 10 + sumOfDigits(n // 10)
+   ```
+
+2. **Write a recursive function to reverse a string**.
+   ```pseudocode
+   function reverseString(s):
+       if length(s) == 0:
+           return ""
+       else:
+           return reverseString(s[1:]) + s[0]
+   ```
+
+3. **Recursive function to check if a string is a palindrome**.
+   ```pseudocode
+   function isPalindrome(s, start, end):
+       if start >= end:
+           return true
+       if s[start] != s[end]:
+           return false
+       return isPalindrome(s, start + 1, end - 1)
+   ```
+
+4. **Recursive function to find the greatest common divisor (GCD)**.
+   ```pseudocode
+   function gcd(a, b):
+       if b == 0:
+           return a
+       else:
+           return gcd(b, a % b)
+   ```
+
+#### 6. **Interview Preparation**
+
+1. **What is recursion, and how is it different from iteration?**
+2. **What are the two essential components of a recursive function?**
+3. **Explain tail recursion and give an example.**
+4. **What is the risk of using recursion without a proper base case?**
+5. **Solve this problem using recursion: Write a recursive function to find the sum of all elements in an array.**
+6. **How can you optimize recursive algorithms, especially for cases like the Fibonacci sequence?**
+
+#### 7. **Wrap-Up**
+
+Recursion is a powerful programming concept that allows you to solve problems by breaking them into smaller, similar problems. It is particularly useful for problems that have a recursive structure, such as tree traversals, sorting algorithms (e.g., quicksort, mergesort), and more. However, recursion comes with the cost of higher memory usage due to function calls and can be less efficient than iteration for some problems.
+
+#### 8. **Post-Session Resources**
+
+- **Books**:  
+  "Algorithms" by Robert Sedgewick and Kevin Wayne (Chapter on Recursion).
+  
+- **Online Resources**:  
+  - GeeksforGeeks: Recursion and its types.
+  - Khan Academy: Recursion in computer science.
+  - LeetCode: Problems tagged with "Recursion".
+
+#### 9. **Assessment (Output-Based Questions)**
+
+1. **Consider the following pseudocode for a recursive function:**
+   ```pseudocode
+   function mystery(n):
+       if n == 0:
+           return 1
+       else:
+           return n * mystery(n - 1)
+   ```
+   **What will be the output of `mystery(4)`?**
+   - a) 4
+   - b) 12
+   - c) 24
+   - d) 120
+   **Answer**: d (Factorial of 4 is 120)
+
+2. **What will be printed by the following recursive code?**
+   ```pseudocode
+   function countdown(n):
+       if n == 0:
+           Print("Blastoff!")
+       else:
+           Print(n)
+           countdown(n - 1)
+   ```
+   **Input**: `countdown(3)`
+   **Answer**:  
+   ```
+   3
+   2
+   1
+   Blastoff!
+   ```
