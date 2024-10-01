@@ -1,0 +1,220 @@
+### Functions:
+
+#### 1. **Introduction (What, Why, How)**
+
+- **What**:  
+  A function is a self-contained block of code that performs a specific task. It can accept inputs (parameters), process them, and return a result (output). Functions allow you to reuse code and break down complex problems into simpler, more manageable tasks.
+
+- **Why**:  
+  Functions improve code reusability, modularity, and maintainability. They help in avoiding code duplication, making programs easier to debug, read, and understand. They also promote the *DRY* (Don't Repeat Yourself) principle, allowing developers to write efficient, modular code.
+
+- **How**:  
+  Functions are typically defined by a name, a set of parameters, and a return type. You can call (invoke) a function by its name to execute its block of code.
+
+#### 2. **Learning Objectives**
+
+By the end of this topic, you should be able to:
+- Understand the structure of functions and their benefits.
+- Define and call functions in a program.
+- Pass parameters to functions and retrieve results using return values.
+- Differentiate between various types of functions such as user-defined, built-in, recursive, and anonymous functions.
+
+#### 3. **Essential Concepts (Building Blocks)**
+
+1. **Defining a Function**
+   A function is defined with a name, optional parameters (inputs), and a return value.
+   ```pseudocode
+   Function functionName(parameters):
+       // Code block
+       Return result
+   ```
+
+   - **Function Name**: A unique identifier for the function.
+   - **Parameters (Arguments)**: Input values that the function can use for its operations.
+   - **Return Value**: The value produced by the function after execution.
+
+   **Example**:
+   ```pseudocode
+   Function add(a, b):
+       Return a + b
+   ```
+
+2. **Calling a Function**
+   A function is called using its name followed by parentheses. You can pass arguments during the call, which the function will use in its execution.
+   ```pseudocode
+   result = add(5, 10)
+   ```
+
+3. **Parameters and Return Values**
+
+   - **Parameters**: Functions can take input values, called parameters, that help in generalizing functionality.
+     ```pseudocode
+     Function greet(name):
+         Print "Hello, " + name
+     ```
+
+   - **Return Values**: A function can return a value that can be stored or used further in the program.
+     ```pseudocode
+     Function multiply(x, y):
+         Return x * y
+     ```
+
+4. **Types of Functions**
+
+   - **User-Defined Functions**: Functions created by the programmer to perform specific tasks.
+   - **Built-In Functions**: Predefined functions provided by the programming language (e.g., `print()`, `len()`).
+   - **Anonymous Functions**: Functions without a name, often called *lambda* functions.
+   ```pseudocode
+   Function = lambda x, y: x + y
+   ```
+
+   - **Recursive Functions**: Functions that call themselves to solve a problem by breaking it into sub-problems.
+   ```pseudocode
+   Function factorial(n):
+       If n == 1:
+           Return 1
+       Else:
+           Return n * factorial(n - 1)
+   ```
+
+5. **Pass by Value vs Pass by Reference**
+   - **Pass by Value**: The function gets a copy of the argument's value, and changes made within the function do not affect the original variable.
+   - **Pass by Reference**: The function gets a reference to the original variable, and changes made within the function affect the original variable.
+
+#### 4. **Hands-On Coding (Real-World Implementations)**
+
+1. **Function with Parameters and Return Value**:
+   ```pseudocode
+   Function calculateArea(radius):
+       pi = 3.14
+       area = pi * radius * radius
+       Return area
+
+   result = calculateArea(5)
+   Print result  // Output: 78.5
+   ```
+
+2. **Function to Find Maximum of Two Numbers**:
+   ```pseudocode
+   Function max(a, b):
+       If a > b:
+           Return a
+       Else:
+           Return b
+
+   maxNumber = max(10, 20)
+   Print maxNumber  // Output: 20
+   ```
+
+3. **Recursive Function to Calculate Factorial**:
+   ```pseudocode
+   Function factorial(n):
+       If n == 1:
+           Return 1
+       Else:
+           Return n * factorial(n - 1)
+
+   result = factorial(5)
+   Print result  // Output: 120
+   ```
+
+4. **Lambda Function for Adding Two Numbers**:
+   ```pseudocode
+   add = lambda a, b: a + b
+   result = add(3, 7)
+   Print result  // Output: 10
+   ```
+
+#### 5. **Guided Exercises (Practice Tasks)**
+
+1. **Write a Function to Check if a Number is Even or Odd**:
+   ```pseudocode
+   Function checkEvenOdd(number):
+       If number % 2 == 0:
+           Return "Even"
+       Else:
+           Return "Odd"
+   ```
+
+2. **Write a Function to Reverse a String**:
+   ```pseudocode
+   Function reverseString(s):
+       reversedString = ""
+       For i from length(s) - 1 to 0:
+           reversedString = reversedString + s[i]
+       EndFor
+       Return reversedString
+   ```
+
+3. **Find the Sum of an Array Using a Function**:
+   ```pseudocode
+   Function sumArray(arr):
+       total = 0
+       For each element in arr:
+           total = total + element
+       EndFor
+       Return total
+   ```
+
+4. **Write a Recursive Function to Compute the Fibonacci Sequence**:
+   ```pseudocode
+   Function fibonacci(n):
+       If n == 0:
+           Return 0
+       Else If n == 1:
+           Return 1
+       Else:
+           Return fibonacci(n-1) + fibonacci(n-2)
+   ```
+
+#### 6. **Interview Preparation**
+
+1. **What is a function, and why is it important in programming?**
+2. **Explain the difference between parameters and arguments in functions.**
+3. **How would you implement recursion in a function? Provide an example.**
+4. **What is the purpose of a return statement in a function?**
+5. **Can you explain the difference between pass by value and pass by reference with examples?**
+
+#### 7. **Wrap-Up**
+
+Functions are essential building blocks in programming that enable the reuse of code, improve readability, and promote modularity. By defining a function, you encapsulate logic that can be easily executed as needed. Understanding how to define, call, and manage functions will make your code more efficient and maintainable.
+
+#### 8. **Post-Session Resources**
+
+- **Books**:  
+  "Clean Code: A Handbook of Agile Software Craftsmanship" by Robert C. Martin
+- **Online Resources**:  
+  Learn about advanced functions and recursion on platforms like Coursera, edX, or YouTube tutorials.
+
+#### 9. **Assessment (Output-Based Questions)**
+
+1. **Consider the following pseudocode:**
+   ```pseudocode
+   Function square(x):
+       Return x * x
+
+   result = square(4)
+   Print result
+   ```
+   **What will be the output?**
+   - a) `8`
+   - b) `12`
+   - c) `16`
+   - d) `None of the above`
+
+   **Answer**: c) `16`
+
+2. **What will be the output of this pseudocode?**
+   ```pseudocode
+   Function greet(name):
+       Return "Hello, " + name
+
+   message = greet("Alice")
+   Print message
+   ```
+   - a) `"Hello, Alice"`
+   - b) `"Hi, Alice"`
+   - c) `"Welcome, Alice"`
+   - d) `"Hello, "`
+
+   **Answer**: a) `"Hello, Alice"`
