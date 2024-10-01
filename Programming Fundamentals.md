@@ -1,4 +1,4 @@
-### Programming Fundamentals: A Detailed Note
+### Programming Fundamentals:
 
 #### 1. **Introduction (What, Why, How)**
 
@@ -179,5 +179,3 @@ Programming fundamentals are the core concepts that lay the groundwork for all s
    - c) `0 1 2 3`
    - d) `1 2 3 4`
    **Answer**: b) `0 1 2`
-
-This detailed guide provides a solid foundation for beginners, ensuring a structured approach to learning programming fundamentals.
